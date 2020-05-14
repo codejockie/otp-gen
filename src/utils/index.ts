@@ -1,4 +1,4 @@
-import pad from "pad-component"
+import { pad } from "./pad"
 
 /**
  * Converts given argument to a buffer (bytes).
