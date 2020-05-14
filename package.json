@@ -24,13 +24,11 @@
     "url": "https://github.com/codejockie/otp-gen/issues"
   },
   "homepage": "https://github.com/codejockie/otp-gen#readme",
-  "dependencies": {
-    "pad-component": "0.0.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/jest": "^25.2.1",
     "@types/node": "^14.0.1",
-    "jest": "^26.0.1",
+    "jest": "^25.5.4",
     "ts-jest": "^25.5.1",
     "typescript": "^3.9.2"
   }
