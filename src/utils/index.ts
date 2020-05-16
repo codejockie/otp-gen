@@ -1,11 +1,13 @@
 import { pad } from "./pad"
 
+type arg = number | string | null | undefined
+
 /**
  * Converts given argument to a buffer (bytes).
  * If argument is a number, gets Buffer with size of 8 bytes padded with 0 from left
  * If argument is a string, gets Buffer with full size of the string
  */
-export function toBuffer(arg: string | number): Buffer {
+export function toBuffer(arg: arg): Buffer {
   if (typeof arg === "string") {
     return Buffer.from(arg)
   }
@@ -29,13 +31,18 @@ export function toBuffer(arg: string | number): Buffer {
 export function truncate(hexString: string, digits: number): string {
   const offset = parseInt(hexString.charAt(hexString.length - 1), 16)
   // Get the last 31 bits of result
-  const result = parseInt(hexString.substr(offset * 2, 2 * 4), 16) & 0x7fffffff
+  const result = String(parseInt(hexString.substr(offset * 2, 2 * 4), 16) & 0x7fffffff)
+
+  // TODO: Review this
+  if (result.length > digits) {
+    return result.slice(0, digits - result.length)
+  }
 
   return pad(String(result), digits, "0")
 }
 
 /**
- * Gets the Unix timestamp
+ * Gets the Unix epoch timestamp
  */
 export function unix(): number {
   return Math.round(Date.now() / 1000)
