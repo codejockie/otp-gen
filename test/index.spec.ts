@@ -1,5 +1,4 @@
-import { hotp, totp } from "../src"
-import { HashAlgo } from "../src/types"
+import { HashAlgo, hotp, totp } from "../src"
 
 describe("hotp", () => {
   test("returns hmac based otp", () => {

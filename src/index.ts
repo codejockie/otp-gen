@@ -1,7 +1,7 @@
 import crypto from "crypto"
 
 import { toBuffer, truncate, unix } from "./utils"
-import { HashAlgo, HmacOTP, TimeOTP } from "./types"
+import { HmacOTP, TimeOTP } from "./types"
 
 /*
   HOTP and TOTP Specs
@@ -12,6 +12,12 @@ import { HashAlgo, HmacOTP, TimeOTP } from "./types"
 const T0 = 0
 const DIGITS = 6
 const TIME_STEP_X = 30
+
+export enum HashAlgo {
+  SHA1 = "sha1",
+  SHA256 = "sha256",
+  SHA512 = "sha512",
+}
 
 /**
  * Generates a HMAC Based OTP

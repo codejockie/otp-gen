@@ -1,8 +1,4 @@
-export enum HashAlgo {
-  SHA1 = "sha1",
-  SHA256 = "sha256",
-  SHA512 = "sha512",
-}
+import { HashAlgo } from "./"
 
 export interface HmacOTP {
   /** Key: Unique shared secret key for encrypting C (counter) values for HMAC algorithm */
