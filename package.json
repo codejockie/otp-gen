@@ -1,6 +1,6 @@
 {
   "name": "@codejockie/otp-gen",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "An OTP generator that implements RFC4226 (HOTP) and RFC6238 (TOTP)",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
