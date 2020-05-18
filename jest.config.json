@@ -1,8 +1,10 @@
 {
+  "collectCoverage": true,
+  "coverageReporters": ["html", "json", "lcov", "text"],
+  "moduleFileExtensions": ["ts", "js"],
+  "testEnvironment": "node",
+  "testRegex": "/test/.*",
   "transform": {
     "^.+\\.tsx?$": "ts-jest"
-  },
-  "testRegex": "/test/.*",
-  "testEnvironment": "node",
-  "moduleFileExtensions": ["ts", "js"]
+  }
 }
