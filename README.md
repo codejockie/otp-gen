@@ -5,7 +5,7 @@
 ![npm](https://img.shields.io/npm/v/@codejockie/otp-gen?style=flat-square)
 <!-- ![npm](https://img.shields.io/npm/dm/@codejockie/otp-gen?style=flat-square) -->
 
-A One Time Password generator with a customisable implementation of the HMAC based One Time Password [HOTP](https://tools.ietf.org/html/rfc4226) and Time based One Time Password [TOTP](https://tools.ietf.org/html/rfc6238).
+A One Time Password generator with a customisable implementation of the HMAC based One Time Password ([HOTP](https://tools.ietf.org/html/rfc4226)) and Time based One Time Password ([TOTP](https://tools.ietf.org/html/rfc6238)).
 
 ## Installation
 `npm install @codejockie/otp-gen`
