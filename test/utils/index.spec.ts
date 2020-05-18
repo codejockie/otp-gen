@@ -1,5 +1,78 @@
 import crypto from "crypto"
-import { toBuffer, truncate, unix } from "../../src/utils"
+import {
+  decimalToHex,
+  hexToDecimal,
+  pad,
+  padLeft,
+  padRight,
+  toBuffer,
+  truncate,
+  unix,
+} from "../../src/utils"
+
+describe("decimalToHex", () => {
+  test("converts a decimal to hex string", () => {
+    expect(decimalToHex(1)).toEqual("01")
+    expect(decimalToHex(10)).toEqual("0a")
+    expect(decimalToHex(15)).toEqual("0f")
+    expect(decimalToHex(16)).toEqual("10")
+  })
+})
+
+describe("hexToDecimal", () => {
+  test("converts a hex string to decimal", () => {
+    expect(hexToDecimal("1")).toEqual(1)
+    expect(hexToDecimal("A")).toEqual(10)
+    expect(hexToDecimal("f")).toEqual(15)
+    expect(hexToDecimal("10")).toEqual(16)
+  })
+})
+
+describe("pad", () => {
+  test("returns string if string length > given length", () => {
+    expect(pad("testkey", 5)).toEqual("testkey")
+  })
+
+  test("pads string by given length", () => {
+    expect(pad("test", 5)).toEqual(" test")
+  })
+
+  test("pads string by given length and char", () => {
+    expect(pad("test", 5, "*")).toEqual("*test")
+    expect(pad("test", 8, "*")).toEqual("**test**")
+    expect(pad("test", 9, "*")).toEqual("***test**")
+  })
+})
+
+describe("padLeft", () => {
+  test("returns string if string length > given length", () => {
+    expect(padLeft("testkey", 5)).toEqual("testkey")
+  })
+
+  test("pads string left by given length", () => {
+    expect(padLeft("test", 5)).toEqual(" test")
+  })
+
+  test("pads string left by given length and char", () => {
+    expect(padLeft("test", 5, "*")).toEqual("*test")
+    expect(padLeft("test", 8, "*")).toEqual("****test")
+  })
+})
+
+describe("padRight", () => {
+  test("returns string if string length > given length", () => {
+    expect(padRight("testkey", 5)).toEqual("testkey")
+  })
+
+  test("pads string right by given length", () => {
+    expect(padRight("test", 5)).toEqual("test ")
+  })
+
+  test("pads string right by given length and char", () => {
+    expect(padRight("test", 5, "*")).toEqual("test*")
+    expect(padRight("test", 9, "*")).toEqual("test*****")
+  })
+})
 
 describe("toBuffer", () => {
   test("throws an error for invalid arguments", () => {
@@ -34,7 +107,7 @@ describe("truncate", () => {
       .createHmac("sha512", keyBytes)
       .update(counterBytes)
       .digest("hex")
-    expect(truncate(hash, 8)).toEqual("66106271")
+    expect(truncate(hash, 8)).toEqual("61062712")
     expect(truncate(hash, 10)).toEqual("0661062712")
   })
 })

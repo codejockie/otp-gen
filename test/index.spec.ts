@@ -3,9 +3,9 @@ import { HashAlgo, hotp, totp } from "../src"
 describe("hotp", () => {
   test("returns hmac based otp", () => {
     // Return 6 digits (default)
-    expect(hotp({ counter: 0, key: "testkey" })).toEqual("995486")
+    expect(hotp({ counter: 0, key: "testkey" })).toEqual("486102")
     // Returns 8
-    expect(hotp({ counter: 0, key: "testkey", digits: 8 })).toEqual("99548610")
+    expect(hotp({ counter: 0, key: "testkey", digits: 8 })).toEqual("95486102")
     expect(hotp({ counter: 0, key: "testkey", digits: 10 })).toEqual(
       "0995486102"
     )
@@ -18,7 +18,7 @@ describe("hotp", () => {
         key: "testkey",
         digits: 8,
       })
-    ).toEqual("13884827")
+    ).toEqual("88482710")
     expect(
       hotp({
         algorithm: HashAlgo.SHA512,

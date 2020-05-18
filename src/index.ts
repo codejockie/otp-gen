@@ -1,7 +1,7 @@
 import crypto from "crypto"
 
-import { toBuffer, truncate, unix } from "./utils"
 import { HmacOTP, TimeOTP } from "./types"
+import { toBuffer, truncate, unix } from "./utils"
 
 /*
   HOTP and TOTP Specs
@@ -24,14 +24,11 @@ export enum HashAlgo {
  */
 export function hotp(config: HmacOTP): string | number {
   const { digits = DIGITS, algorithm = HashAlgo.SHA1 } = config
-  const keyBytes = toBuffer(config.key)
-  const counterBytes = toBuffer(config.counter)
-  const hash = crypto
-    .createHmac(algorithm, keyBytes)
-    .update(counterBytes)
-    .digest("hex")
+  const key = toBuffer(config.key)
+  const counter = toBuffer(config.counter)
+  const hmac = crypto.createHmac(algorithm, key).update(counter).digest("hex")
 
-  return truncate(hash, digits)
+  return truncate(hmac, digits)
 }
 
 /**
