@@ -1,3 +1,6 @@
 README.md
 jest.config.json
 test/
+coverage/
+*.tgz
+.travis.yml
