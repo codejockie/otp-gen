@@ -59,7 +59,7 @@ hotp({
   key: "shared_secret",
   counter: 12345,
   algorithm: "sha256",
-});
+})
 ```
 
 ### Using a different return digits
@@ -71,7 +71,7 @@ hotp({
   key: "shared_secret",
   counter: 12345,
   digits: 10,
-});
+})
 ```
 ### Using a different unix time
 
@@ -81,7 +81,7 @@ import { totp } from "@codejockie/otp-gen"
 totp({
   key: "shared_secret",
   epochTime: 123456
-});
+})
 ```
 
 ### Using a different `T0` and  `Time Step X`
@@ -93,7 +93,7 @@ totp({
   key: "shared_secret",
   t0: 10,
   timeStepX: 60,
-});
+})
 ```
 
 ## TypeScript
