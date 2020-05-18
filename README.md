@@ -1,5 +1,11 @@
 # OTP Gen
 
+[![Build Status](https://travis-ci.org/codejockie/otp-gen.svg?branch=master)](https://travis-ci.org/codejockie/otp-gen)
+[![codecov](https://codecov.io/gh/codejockie/otp-gen/branch/master/graph/badge.svg)](https://codecov.io/gh/codejockie/otp-gen)
+[![npm version](https://badge.fury.io/js/%40codejockie%2Fotp-gen.svg)](https://badge.fury.io/js/%40codejockie%2Fotp-gen)
+![npm](https://img.shields.io/npm/v/@codejockie/otp-gen?style=flat-square)
+<!-- ![npm](https://img.shields.io/npm/dm/@codejockie/otp-gen?style=flat-square) -->
+
 A One Time Password generator with a customisable implementation of the HMAC based One Time Password [HOTP](https://tools.ietf.org/html/rfc4226) and Time based One Time Password [TOTP](https://tools.ietf.org/html/rfc6238).
 
 ## Installation
