@@ -101,12 +101,9 @@ describe("truncate", () => {
       .mockImplementationOnce(() =>
         new Date("2020-05-16T15:17:58.135Z").valueOf()
       )
-    const keyBytes = toBuffer("testkey")
-    const counterBytes = toBuffer(unix())
-    const hash = crypto
-      .createHmac("sha512", keyBytes)
-      .update(counterBytes)
-      .digest("hex")
+    const key = toBuffer("testkey")
+    const counter = toBuffer(unix())
+    const hash = crypto.createHmac("sha512", key).update(counter).digest("hex")
     expect(truncate(hash, 8)).toEqual("61062712")
     expect(truncate(hash, 10)).toEqual("0661062712")
   })

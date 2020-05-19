@@ -9,7 +9,7 @@ export function decimalToHex(number: number) {
 }
 
 /**
- * Converts a string to hex.
+ * Converts a hex string to decimal.
  * @param str String to convert
  */
 export function hexToDecimal(str: string) {
@@ -73,7 +73,7 @@ export function toBuffer(arg: arg): Buffer {
  *
  * @param {string} hmac Hex to be truncated from offset byte to offset + 4 byte
  * @param {number} digits Number of digits to return
- * @returns {string} Numerical string in base 10 of the truncated hex string
+ * @returns {string} Base 10 string of the truncated hex (hmac)
  */
 export function truncate(hmac: string, digits: number): string {
   const offset = hexToDecimal(hmac.charAt(hmac.length - 1))
@@ -84,7 +84,7 @@ export function truncate(hmac: string, digits: number): string {
     return otp.substr(otp.length - digits, digits)
   }
 
-  return pad(String(otp), digits, "0")
+  return pad(otp, digits, "0")
 }
 
 /**
