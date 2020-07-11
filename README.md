@@ -115,3 +115,5 @@ Pull Requests are welcomed!
 
 ## Issues
 Please [file an issue](https://github.com/codejockie/otp-gen/issues) if you encounter any.
+
+<a href="https://www.buymeacoffee.com/codejockie" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-red.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a>
