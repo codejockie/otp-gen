@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc",
     "prepare": "npm run build && npm test",
-    "test": "jest --config=jest.config.json && codecov"
+    "test": "jest --config=jest.config.json"
   },
   "repository": {
     "type": "git",
@@ -29,8 +29,15 @@
     "@types/jest": "^25.2.1",
     "@types/node": "^14.0.1",
     "codecov": "^3.7.0",
+    "husky": "^4.2.5",
     "jest": "^25.5.4",
     "ts-jest": "^25.5.1",
     "typescript": "^3.9.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test",
+      "pre-push": "npm test"
+    }
   }
 }
