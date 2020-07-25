@@ -30,26 +30,6 @@ export function pad(str: string, length: number, char: string = " "): string {
 }
 
 /**
- * Pads `str` left to `length`. If `char` is given, it pads `char` to `str`.
- */
-export function padLeft (str: string, length: number, char: string = " "): string {
-  if (str.length >= length) {
-    return str
-  }
-  return Array(length - str.length + 1).join(char) + str
-}
-
-/**
- * Pads `str` right to `length`. If `char` is given, it pads `char` to `str`.
- */
-export function padRight (str: string, length: number, char: string = " "): string {
-  if (str.length >= length) {
-    return str
-  }
-  return str + Array(length - str.length + 1).join(char)
-}
-
-/**
  * Converts given argument to a buffer (bytes).
  * If argument is a number, gets Buffer with size of 8 bytes padded with 0 from left.
  * If argument is a string, gets Buffer with full size of the string.
